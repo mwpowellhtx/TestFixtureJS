@@ -141,7 +141,7 @@ var TestFixture = function() {
 }
 
 if (TestFixture.getType === undefined) {
-    var getType = function(x) {
+    TestFixture.getType = function(x) {
         /* special cases */
         if (x === null) {
             return "[object Null]";
@@ -153,7 +153,7 @@ if (TestFixture.getType === undefined) {
 }
 
 if (TestFixture.getName === undefined) {
-    var getName = function(x) {
+    TestFixture.getName = function(x) {
         if (x === undefined) {
             return "(undefined)";
         } else if (x === null) {
