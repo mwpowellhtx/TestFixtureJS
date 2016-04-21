@@ -19,6 +19,7 @@ Provides an easy to use Test Fixture prototype. There are a couple of key protot
 |*TestFixture.getName*|No\*\*|Convenience function that reports the name of the given value.|
 
 \* You may customize these features, but default behavior is perfectly adequate to the task at hand.
+
 \*\* Well, in JavaScript you can customize just about everything. However, do so at your own risk.
 
 ## Features
