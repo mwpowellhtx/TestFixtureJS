@@ -1,0 +1,19 @@
+.test-fixture-collapsed {
+    border-collapse: collapse;
+}
+
+.test-fixture-bordered {
+    border: 1px solid black;
+}
+
+.test-fixture-spaced {
+    border-spacing: 2px;
+}
+
+.test-fixture-spacer {
+    width: 20px;
+}
+
+.test-fixture-padded {
+    padding: 2px;
+}

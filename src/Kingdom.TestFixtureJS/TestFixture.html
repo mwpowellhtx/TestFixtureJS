@@ -1,0 +1,69 @@
+<html>
+
+<head>
+    <title>Test Fixture</title>
+    <link rel="stylesheet" type="text/css" href="Content/TestFixture.css">
+    <script src="Scripts/TestFixtureJS/TestFixture.js"></script>
+    <script type="text/javascript">
+        var booleanFixture = new TestFixture();
+        var intFixture = new TestFixture();
+    </script>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+
+        var booleanMsgs = function(x) {
+            return x
+                ? "Boolean eval succeeded"
+                : "Boolean eval failed";
+        }
+
+        var booleanFuncMsgs = function (x) {
+            return x
+                ? "Boolean eval function succeeded"
+                : "Boolean eval function failed";
+        }
+
+        booleanFixture.submitReport(false, booleanMsgs, { one: 1, two: 2, a: "a", b: "b" });
+        booleanFixture.submitReport(true, booleanMsgs, { three: 3, four: 4, c: "c", d: "d" });
+
+        booleanFixture.submitReport(function () { return false; },
+            booleanFuncMsgs,
+            { five: 5, six: 6, e: "e", f: "f" });
+
+        booleanFixture.submitReport(function () { return true; },
+            booleanFuncMsgs,
+            { seven: 7, eight: 8, g: "g", h: "h" });
+
+        booleanFixture.writeReport();
+
+        intFixture.isSuccess = function(x) { return x === 0; }
+
+        var intMsgs = function (x) {
+            return x
+                ? "Integer eval succeeded"
+                : "Integer eval failed";
+        }
+
+        var intFuncMsgs = function (x) {
+            return x
+                ? "Integer eval function succeeded"
+                : "Integer eval function failed";
+        }
+
+        intFixture.submitReport(1, intMsgs, { one: 1, two: 2, a: "a", b: "b" });
+        intFixture.submitReport(-1, intMsgs, { one: 1, two: 2, a: "a", b: "b" });
+        intFixture.submitReport(0, intMsgs, { three: 3, four: 4, c: "c", d: "d" });
+
+        intFixture.submitReport(function() { return 1; }, intFuncMsgs, { five: 5, six: 6, e: "e", f: "f" });
+        intFixture.submitReport(function() { return -1; }, intFuncMsgs, { five: 5, six: 6, e: "e", f: "f" });
+        intFixture.submitReport(function() { return 0; }, intFuncMsgs, { seven: 7, eight: 8, g: "g", h: "h" });
+
+        intFixture.writeReport();
+
+    </script>
+
+</body>
+</html>
